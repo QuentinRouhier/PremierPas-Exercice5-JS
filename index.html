@@ -8,16 +8,21 @@
         <form>
             <label for="premier_nombre">Premier nombre : </label><input type="text" id="premier_nombre" name="premier_nombre"/><br/>
             <label for="deuxieme_nombre">Deuxième nombre : </label><input type="text" id="deuxieme_nombre" name="deuxieme_nombre"/><br/>
-            <button onclick="addition()"  id="valider" name ="valider">Valider</button>
+            <button onclick="check()"  id="valider" name ="valider">Valider</button>
         </form>
         <script>
-          function addition(){
-            var firstNumber = parseInt(document.getElementById('premier_nombre').value);
-            var secondNumber = document.getElementById('deuxieme_nombre').value;
-            var result;
-            result = firstNumber * secondNumber;
-            alert(result)
-          }
+         /*Demander à l’utilisateur deux nombres à virgule. Ne garder que la partie entière du premier .
+         Les multiplier et afficher le résultat dans une boîte de dialogue. */
+        function check(){ //"check" se retrouve dans le html avec onClick
+         var first = document.getElementById('premier_nombre').value;
+         var second = document.getElementById('deuxieme_nombre').value;
+         if (isNaN(first) || isNaN(second)){ // si la valeur n'est pas un nombre tu fais : il faut des nombres
+           alert('Il faut des nombres');
+         } else { //sinon tu me donne le resultat de la multiplication
+           var result = parseInt(first) * parseFloat(second);
+           alert(result);
+         }
+        };
         </script>
     </body>
 </html>
